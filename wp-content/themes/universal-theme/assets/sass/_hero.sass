@@ -1,0 +1,123 @@
+.home
+    background-color: #E5E5E5
+.front-page-header
+    padding-top: 30px
+    background-color: #262D33
+    position: relative
+    height: 475px
+.hero
+    display: flex
+    overflow: hidden
+    border-radius: 10px
+    min-height: 570px
+    background-color: #fff
+    z-index: 1
+    position: relative
+    &-post
+        &-categories
+            color: #4592FF
+            font-weight: 900
+            font-size: 12px
+            line-height: 15px
+        &-content
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            height: 100%
+            position: relative
+            z-index: 1
+            a[rel='category tag']
+                color: #4592FF
+                text-transform: uppercase
+                text-decoration: none
+    .left
+        flex-basis: 75%
+        position: relative
+        padding: 55px 55px 100px 55px
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        &::after 
+            content: ''
+            background: linear-gradient(0deg, rgba(64, 48, 61, 0.35), rgba(64, 48, 61, 0.35))
+            position: absolute
+            top: 0
+            left: 0
+            right: 0
+            bottom: 0
+        .post-thumb
+            position: absolute
+            top: 0
+            left: 0
+            right: 0
+            bottom: 0
+            height: 100%
+        .author
+            display: flex
+            align-items: center
+            text-decoration: none
+            &-bio
+                margin-left: 10px
+            &-name
+                display: block
+                line-height: 20px
+                color: rgba(#fff,.85)
+            &-rank
+                color: rgba(#fff,.4)
+        .avatar
+            width: 45px
+            height: 45px
+            border-radius: 50%
+        .post
+            &-title
+                font-size: 40px
+                line-height: 50px
+                color: #ffffff
+                font-family: 'Roboto Slab', sans-serif
+                margin-top: 20px
+                margin-bottom: 50px
+                max-width: 590px
+        .more
+            display: inline-block
+            color: #ffffff
+            padding: 10px 20px
+            padding-right: 50px
+            background: #4592FF url('../images/arrow.svg') no-repeat center right 20px
+            border-radius: 20px
+            text-decoration: none  
+    .right
+        flex-basis: 25%
+        .recommend
+            margin-left: 25px
+            margin-bottom: 20px
+            margin-top: 20px
+            font-weight: 900
+            line-height: 20px
+            text-transform: uppercase
+        .posts
+            &-list
+                padding: 0
+                margin: 0
+                list-style: none
+        .post
+            padding: 17px 25px 19px
+            margin: 0
+            border-top: 1px solid #D9DADB
+            min-height: 100px
+            &:hover
+                background-color: #f5f5f5                
+            a[rel='category tag']
+                font-weight: 900
+                font-size: 12px
+                line-height: 15px
+                text-transform: uppercase
+                color: unset
+                text-decoration: none
+            &-permalink
+                color: #4B5157
+                text-decoration: none
+            &-title
+                line-height: 20px
+                font-weight: normal
+                margin-bottom: 0
+                margin-top: 8px
