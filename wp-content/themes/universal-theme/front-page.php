@@ -30,7 +30,7 @@
                         <span class="hero-post-categories">
                             <?php the_category(' / '); ?>
                         </span>
-                        <h2 class="post-title"><?php echo mb_strimwidth(get_the_title(), 0, 60, '...'); ?></h2>
+                        <h2 class="post-title"><?php trim_title(60); ?></h2>
                         <a href="<?php echo get_permalink( ); ?>" class="more">Читать далее</a>
                     </div>
                 </div>
@@ -65,7 +65,7 @@
                     <li class="post">
                         <?php the_category(' / '); ?>
                         <a class="post-permalink" href="<?php echo get_the_permalink( ); ?>">
-                            <h4 class="post-title"><?php echo mb_strimwidth(get_the_title(), 0, 60, '...'); ?></h4>
+                            <h4 class="post-title"><?php trim_title(60); ?></h4>
                         </a>
                     </li>
                     <?php
@@ -101,7 +101,7 @@
         ?>
             <li class="article-item">
                 <a class="article-permalink" href="<?php echo get_the_permalink( ); ?>">
-                    <h4 class="article-title"><?php echo mb_strimwidth(get_the_title(), 0, 50, '...'); ?></h4>
+                    <h4 class="article-title"><?php trim_title(50); ?></h4>
                 </a>
                 <img class="article-thumb" src="<?php echo get_the_post_thumbnail_url( null, 'thumbnail' ); ?>" alt="">
             </li>

@@ -45,7 +45,9 @@ function delete_intermediate_image_sizes( $sizes ){
 	] );
 }
 
-
+function trim_title($s) {
+    echo mb_strimwidth(get_the_title(), 0, $s, '...');
+}
 
 
 // remove versions
