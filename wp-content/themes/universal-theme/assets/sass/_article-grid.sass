@@ -58,6 +58,7 @@
                         .author
                             display: flex
                             align-items: center
+                            color: #262D33
                             &-avatar
                                 width: 30px
                                 height: 30px
@@ -158,4 +159,44 @@
                         margin-left: 5px
             &:nth-of-type(3)
                 grid-row: 2/4
+                .article-grid
+                    &-title
+                        padding: 15px 25px 30px
+                        margin: 0
+                        max-width: 220px
+                    &-thumbnail
+                        object-fit: cover
+                        max-height: 270px
+                        width: 100%
+            &:nth-of-type(3), &-default
+                color: #262D33
+                .article-grid
+                    &-title
+                        color: #262D33
+                        font-family: 'Roboto Slab', sans-serif
+                        font-weight: bold
+                        font-size: 16px
+                        line-height: 25px
+                    &-excerpt
+                        font-size: 14px
+                        line-height: 20px
+                        color: #4B5157
+                        margin-top: 5px
+                        margin-bottom: auto
+                .date
+                    color: #262D33
+                    font-size: 12px
+                    line-height: 15px
+                    color: #939699
+            &-default
+                padding: 25px 25px 30px
+                .article-grid
+                    &-title
+                        margin: 0
+                    &-permalink
+                        display: flex
+                        flex-direction: column
+                        justify-content: space-between
+                        height: 100%
+
 

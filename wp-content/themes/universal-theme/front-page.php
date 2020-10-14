@@ -204,7 +204,7 @@
                     case '3': ?>
                         <li class="article-grid-item">
                             <a href="<?php the_permalink(); ?>" class="article-grid-permalink">
-                                <img src="<?php echo get_the_post_thumbnail_url( ); ?>" alt="">
+                                <img class="article-grid-thumbnail" src="<?php echo get_the_post_thumbnail_url( ); ?>" alt="">
                                 <h4 class="article-grid-title"><?php trim_title(50); ?></h4>
                             </a>
                         </li>
