@@ -93,7 +93,7 @@
             $myposts = get_posts([ 
                 'numberposts' => 4,
                 'category_name' => 'articles',
-                'order' => 'ASC',
+                'tag' => 'novelty',
             ]);
 
             if( $myposts ){
