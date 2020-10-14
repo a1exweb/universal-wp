@@ -54,8 +54,9 @@
 
                     $myposts = get_posts([ 
                         'numberposts' => 5,
-                        'offset' => 1,
+                        // 'offset' => 1,
                         'category_name' => 'javascript, css, html, web-design',
+                        'tag' => 'recommend',
                     ]);
 
                     if( $myposts ){
