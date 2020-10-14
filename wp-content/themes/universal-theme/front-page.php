@@ -124,6 +124,7 @@
 
         $query = new WP_Query( [
             'posts_per_page' => 7,
+            'tag' => 'popular',
         ] );
 
         if ( $query->have_posts() ) {
