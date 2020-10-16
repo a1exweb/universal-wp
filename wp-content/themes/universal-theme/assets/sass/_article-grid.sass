@@ -1,3 +1,7 @@
+.main-grid
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
 .article
     &-grid
         max-width: 850px
@@ -5,7 +9,7 @@
         padding: 0
         list-style: none
         display: grid
-        grid-template: minmax(min-content, max-content) repeat(2, 1fr) / repeat(3, 1fr)
+        grid-template: minmax(min-content, max-content) repeat(2, 170px) / repeat(3, 1fr)
         grid-gap: 30px
         &-permalink
             text-decoration: none
@@ -166,7 +170,7 @@
                         max-width: 220px
                     &-thumbnail
                         object-fit: cover
-                        max-height: 270px
+                        height: 275px
                         width: 100%
             &:nth-of-type(3), &-default
                 color: #262D33
@@ -189,11 +193,15 @@
                     line-height: 15px
                     color: #939699
             &-default
-                padding: 25px 25px 30px
+                position: relative
                 .article-grid
                     &-title
                         margin: 0
                     &-permalink
+                        padding: 25px 25px 30px
+                        position: absolute
+                        height: 100%
+                        width: 100%
                         display: flex
                         flex-direction: column
                         justify-content: space-between

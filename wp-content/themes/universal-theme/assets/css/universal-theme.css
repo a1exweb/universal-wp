@@ -242,13 +242,18 @@ button {
   object-fit: cover;
   margin-left: auto; }
 
+.main-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; }
+
 .article-grid {
   max-width: 850px;
   margin: 30px 0;
   padding: 0;
   list-style: none;
   display: grid;
-  grid-template: minmax(min-content, max-content) repeat(2, 1fr)/repeat(3, 1fr);
+  grid-template: minmax(min-content, max-content) repeat(2, 170px)/repeat(3, 1fr);
   grid-gap: 30px; }
   .article-grid-permalink {
     text-decoration: none;
@@ -406,7 +411,7 @@ button {
         max-width: 220px; }
       .article-grid-item:nth-of-type(3) .article-grid-thumbnail {
         object-fit: cover;
-        max-height: 270px;
+        height: 275px;
         width: 100%; }
     .article-grid-item:nth-of-type(3), .article-grid-item-default {
       color: #262D33; }
@@ -428,11 +433,58 @@ button {
         line-height: 15px;
         color: #939699; }
     .article-grid-item-default {
-      padding: 25px 25px 30px; }
+      position: relative; }
       .article-grid-item-default .article-grid-title {
         margin: 0; }
       .article-grid-item-default .article-grid-permalink {
+        padding: 25px 25px 30px;
+        position: absolute;
+        height: 100%;
+        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         height: 100%; }
+
+.sidebar-front-page {
+  margin-top: 30px;
+  margin-left: 30px; }
+
+.widget-downloader {
+  position: relative;
+  background: #3BBDC4 url(../images/file.svg) no-repeat top 24px right 22px;
+  border-radius: 10px;
+  color: #ffffff;
+  padding: 25px 25px 65px;
+  list-style: none; }
+  .widget-downloader .widget-title {
+    margin-top: 0;
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 25px; }
+  .widget-downloader .widget-description {
+    color: #C1F4F5;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0; }
+  .widget-downloader .widget-link {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 13px;
+    border-top: 1px solid #96E2E3;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .widget-downloader .widget-link-icon {
+      margin-right: 10px; }
