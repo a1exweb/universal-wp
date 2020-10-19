@@ -448,43 +448,116 @@ button {
 
 .sidebar-front-page {
   margin-top: 30px;
-  margin-left: 30px; }
+  margin-left: 30px;
+  max-width: 263px; }
 
-.widget-downloader {
-  position: relative;
-  background: #3BBDC4 url(../images/file.svg) no-repeat top 24px right 22px;
-  border-radius: 10px;
-  color: #ffffff;
-  padding: 25px 25px 65px;
-  list-style: none; }
-  .widget-downloader .widget-title {
-    margin-top: 0;
-    font-family: Roboto Slab;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 25px; }
-  .widget-downloader .widget-description {
-    color: #C1F4F5;
-    font-size: 14px;
-    line-height: 20px;
-    margin: 0; }
-  .widget-downloader .widget-link {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    text-align: center;
-    padding-top: 12px;
-    padding-bottom: 13px;
-    border-top: 1px solid #96E2E3;
-    color: #fff;
-    text-decoration: none;
+.widget {
+  background-color: #ffffff;
+  border-radius: 10px; }
+  .widget-title {
+    padding: 20px 25px;
+    border-bottom: 1px solid #D9DADB;
     font-weight: 900;
     font-size: 14px;
     line-height: 20px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin: 0; }
+  .widget-downloader {
+    position: relative;
+    background: #3BBDC4 url(../images/file.svg) no-repeat top 24px right 22px;
+    border-radius: 10px;
+    color: #ffffff;
+    padding: 25px 25px 65px;
+    list-style: none; }
+    .widget-downloader .widget-title {
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-family: Roboto Slab;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 25px;
+      border: 0;
+      padding: 0;
+      text-transform: unset;
+      letter-spacing: unset; }
+    .widget-downloader .widget-description {
+      color: #C1F4F5;
+      font-size: 14px;
+      line-height: 20px;
+      margin: 0; }
+    .widget-downloader .widget-link {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+      padding-top: 12px;
+      padding-bottom: 13px;
+      border-top: 1px solid #96E2E3;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 900;
+      font-size: 14px;
+      line-height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .widget-downloader .widget-link-icon {
+        margin-right: 10px; }
+  .widget .tagcloud {
     display: flex;
     align-items: center;
-    justify-content: center; }
-    .widget-downloader .widget-link-icon {
-      margin-right: 10px; }
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 25px 25px 30px; }
+  .widget .tag-cloud-link {
+    margin-right: 10px;
+    margin-bottom: 15px;
+    text-decoration: none;
+    padding: 5px 15px;
+    border: 1px solid #D9DADB;
+    box-sizing: border-box;
+    border-radius: 5px;
+    color: #262D33;
+    line-height: 20px;
+    font-weight: 900;
+    max-width: 95px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
+
+.widget_social_widget .widget-title {
+  letter-spacing: unset;
+  text-transform: unset;
+  font-family: 'Roboto Slab', serif;
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 0; }
+
+.widget_social_widget .social-links {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 5px 20px 40px; }
+
+.widget_social_widget .social-link {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; }
+  .widget_social_widget .social-link img {
+    height: 18px; }
+  .widget_social_widget .social-link-facebook {
+    background: #4267B2; }
+  .widget_social_widget .social-link-twitter {
+    background: #1DA1F2; }
+  .widget_social_widget .social-link-youtube {
+    background: #FF0000; }
+  .widget_social_widget .social-link-instagram {
+    background: #FF3980; }

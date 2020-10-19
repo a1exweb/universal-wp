@@ -204,7 +204,7 @@ add_action( 'widgets_init', 'register_downloader_widget' );
 function universal_theme_widgets_init_posts_sidebar() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Сайдбар на главной под посты', 'universal-theme' ),
+			'name'          => esc_html__( 'Сайдбар на главной с последними постами', 'universal-theme' ),
 			'id'            => 'posts-sidebar',
 			'description'   => esc_html__( 'Добавьте виджеты сюда.', 'universal-theme' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -215,6 +215,161 @@ function universal_theme_widgets_init_posts_sidebar() {
     );
 }
 add_action( 'widgets_init', 'universal_theme_widgets_init_posts_sidebar' );
+
+add_filter( 'widget_tag_cloud_args', 'filter_tag_cloud' );
+function filter_tag_cloud( $args ){
+	// filter...
+	$args['unit'] = 'px';
+	$args['smallest'] = '14';
+	$args['largest'] = '14';
+	$args['number'] = '13';
+	return $args;
+}
+
+
+/**
+ * Добавление нового виджета Social_Widget.
+ */
+class Social_Widget extends WP_Widget {
+
+	// Регистрация виджета используя основной класс
+	function __construct() {
+		// вызов конструктора выглядит так:
+		// __construct( $id_base, $name, $widget_options = array(), $control_options = array() )
+		parent::__construct(
+			'social_widget', // ID виджета, если не указать (оставить ''), то ID будет равен названию класса в нижнем регистре: social_widget
+			'Социальные сети',
+			array( 'description' => 'Описание виджета', /*'classname' => 'social_widget',*/ )
+		);
+
+		// скрипты/стили виджета, только если он активен
+		if ( is_active_widget( false, false, $this->id_base ) || is_customize_preview() ) {
+			add_action('wp_enqueue_scripts', array( $this, 'add_social_widget_scripts' ));
+			add_action('wp_head', array( $this, 'add_social_widget_style' ) );
+		}
+	}
+
+	/**
+	 * Вывод виджета во Фронт-энде
+	 *
+	 * @param array $args     аргументы виджета.
+	 * @param array $instance сохраненные данные из настроек
+	 */
+	function widget( $args, $instance ) {
+		$title = apply_filters( 'widget_title', $instance['title'] );
+		$facebook = $instance['facebook'];
+		$twitter = $instance['twitter'];
+		$youtube = $instance['youtube'];
+		$instagram = $instance['instagram'];
+
+		echo $args['before_widget'];
+		if ( ! empty( $title ) ) {
+			echo $args['before_title'] . $title . $args['after_title'];
+		}
+		echo '<div class="social-links">';
+		if ( ! empty( $facebook ) ) {
+			echo '<a class="social-link social-link-facebook" href='.$facebook.'><img src="'.get_template_directory_uri().'/assets/images/facebook.svg'.'" alt="Иконка: facebook"></a>';
+		}
+		if ( ! empty( $twitter ) ) {
+			echo '<a class="social-link social-link-twitter " href='.$twitter.'><img src="'.get_template_directory_uri().'/assets/images/twitter.svg'.'" alt="Иконка: twitter"></a>';
+		}
+		if ( ! empty( $youtube ) ) {
+			echo '<a class="social-link social-link-youtube" href='.$youtube.'><img src="'.get_template_directory_uri().'/assets/images/youtube.svg'.'" alt="Иконка: youtube"></a>';
+		}
+		if ( ! empty( $instagram ) ) {
+			echo '<a class="social-link social-link-instagram" href='.$instagram.'><img src="'.get_template_directory_uri().'/assets/images/instagram.svg'.'" alt="Иконка: instagram"></a>';
+		}
+		echo '</div>';
+		echo $args['after_widget'];
+	}
+
+	/**
+	 * Админ-часть виджета
+	 *
+	 * @param array $instance сохраненные данные из настроек
+	 */
+	function form( $instance ) {
+		$title = @ $instance['title'] ?: 'Наши соцсети';
+		$facebook = @ $instance['facebook'] ?: '';
+		$twitter = @ $instance['twitter'] ?: '';
+		$youtube = @ $instance['youtube'] ?: '';
+		$instagram = @ $instance['instagram'] ?: '';
+		?>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
+			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'facebook' ); ?>"><?php _e( 'Ссылка на facebook:' ); ?></label> 
+			<input class="widefat" id="<?php echo $this->get_field_id( 'facebook' ); ?>" name="<?php echo $this->get_field_name( 'facebook' ); ?>" type="text" value="<?php echo esc_attr( $facebook ); ?>">
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'twitter' ); ?>"><?php _e( 'Ссылка на twitter:' ); ?></label> 
+			<input class="widefat" id="<?php echo $this->get_field_id( 'twitter' ); ?>" name="<?php echo $this->get_field_name( 'twitter' ); ?>" type="text" value="<?php echo esc_attr( $twitter ); ?>">
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'youtube' ); ?>"><?php _e( 'Ссылка на youtube:' ); ?></label> 
+			<input class="widefat" id="<?php echo $this->get_field_id( 'youtube' ); ?>" name="<?php echo $this->get_field_name( 'youtube' ); ?>" type="text" value="<?php echo esc_attr( $youtube ); ?>">
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'instagram' ); ?>"><?php _e( 'Ссылка на instagram:' ); ?></label> 
+			<input class="widefat" id="<?php echo $this->get_field_id( 'instagram' ); ?>" name="<?php echo $this->get_field_name( 'instagram' ); ?>" type="text" value="<?php echo esc_attr( $instagram ); ?>">
+		</p>
+		<?php 
+	}
+
+	/**
+	 * Сохранение настроек виджета. Здесь данные должны быть очищены и возвращены для сохранения их в базу данных.
+	 *
+	 * @see WP_Widget::update()
+	 *
+	 * @param array $new_instance новые настройки
+	 * @param array $old_instance предыдущие настройки
+	 *
+	 * @return array данные которые будут сохранены
+	 */
+	function update( $new_instance, $old_instance ) {
+		$instance = array();
+		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+		$instance['facebook'] = ( ! empty( $new_instance['facebook'] ) ) ? strip_tags( $new_instance['facebook'] ) : '';
+		$instance['twitter'] = ( ! empty( $new_instance['twitter'] ) ) ? strip_tags( $new_instance['twitter'] ) : '';
+		$instance['youtube'] = ( ! empty( $new_instance['youtube'] ) ) ? strip_tags( $new_instance['youtube'] ) : '';
+		$instance['instagram'] = ( ! empty( $new_instance['instagram'] ) ) ? strip_tags( $new_instance['instagram'] ) : '';
+
+		return $instance;
+	}
+
+	// скрипт виджета
+	function add_social_widget_scripts() {
+		// фильтр чтобы можно было отключить скрипты
+		if( ! apply_filters( 'show_social_widget_script', true, $this->id_base ) )
+			return;
+
+		$theme_url = get_stylesheet_directory_uri();
+
+		wp_enqueue_script('social_widget_script', $theme_url .'/social_widget_script.js' );
+	}
+
+	// стили виджета
+	function add_social_widget_style() {
+		// фильтр чтобы можно было отключить стили
+		if( ! apply_filters( 'show_social_widget_style', true, $this->id_base ) )
+			return;
+		?>
+		<style type="text/css">
+			.social_widget a{ display:inline; }
+		</style>
+		<?php
+	}
+
+} 
+// конец класса Social_Widget
+
+// регистрация Social_Widget в WordPress
+function register_social_widget() {
+	register_widget( 'Social_Widget' );
+}
+add_action( 'widgets_init', 'register_social_widget' );
 
 
 // remove versions
