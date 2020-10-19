@@ -253,7 +253,7 @@ button {
   padding: 0;
   list-style: none;
   display: grid;
-  grid-template: minmax(min-content, max-content) repeat(2, 170px)/repeat(3, 1fr);
+  grid-template: minmax(370px, max-content) repeat(2, 170px)/repeat(3, 1fr);
   grid-gap: 30px; }
   .article-grid-permalink {
     text-decoration: none;
@@ -542,7 +542,7 @@ button {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: 5px 20px 40px; }
+  padding: 0 20px 40px; }
 
 .widget_social_widget .social-link {
   width: 50px;
