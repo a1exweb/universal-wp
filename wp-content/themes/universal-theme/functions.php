@@ -268,16 +268,16 @@ class Social_Widget extends WP_Widget {
 		}
 		echo '<div class="social-links">';
 		if ( ! empty( $facebook ) ) {
-			echo '<a class="social-link social-link-facebook" href='.$facebook.'><img src="'.get_template_directory_uri().'/assets/images/facebook.svg'.'" alt="Иконка: facebook"></a>';
+			echo '<a target="_blank" rel="nofollow noopener" class="social-link social-link-facebook" href='.$facebook.'><img src="'.get_template_directory_uri().'/assets/images/facebook.svg'.'" alt="Иконка: facebook"></a>';
 		}
 		if ( ! empty( $twitter ) ) {
-			echo '<a class="social-link social-link-twitter " href='.$twitter.'><img src="'.get_template_directory_uri().'/assets/images/twitter.svg'.'" alt="Иконка: twitter"></a>';
+			echo '<a target="_blank" rel="nofollow noopener" class="social-link social-link-twitter " href='.$twitter.'><img src="'.get_template_directory_uri().'/assets/images/twitter.svg'.'" alt="Иконка: twitter"></a>';
 		}
 		if ( ! empty( $youtube ) ) {
-			echo '<a class="social-link social-link-youtube" href='.$youtube.'><img src="'.get_template_directory_uri().'/assets/images/youtube.svg'.'" alt="Иконка: youtube"></a>';
+			echo '<a target="_blank" rel="nofollow noopener" class="social-link social-link-youtube" href='.$youtube.'><img src="'.get_template_directory_uri().'/assets/images/youtube.svg'.'" alt="Иконка: youtube"></a>';
 		}
 		if ( ! empty( $instagram ) ) {
-			echo '<a class="social-link social-link-instagram" href='.$instagram.'><img src="'.get_template_directory_uri().'/assets/images/instagram.svg'.'" alt="Иконка: instagram"></a>';
+			echo '<a target="_blank" rel="nofollow noopener" class="social-link social-link-instagram" href='.$instagram.'><img src="'.get_template_directory_uri().'/assets/images/instagram.svg'.'" alt="Иконка: instagram"></a>';
 		}
 		echo '</div>';
 		echo $args['after_widget'];

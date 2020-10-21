@@ -127,6 +127,7 @@
                 $query = new WP_Query( [
                     'posts_per_page' => 7,
                     'tag' => 'popular',
+                    'category__not_in' => 31,
                 ] );
 
                 if ( $query->have_posts() ) {
@@ -192,7 +193,7 @@
                                                         <span class="comments-counter"><?php comments_number('0'); ?></span>
                                                     </div>
                                                     <div class="likes">
-                                                        <img src="<?php echo get_template_directory_uri().'/assets/images/heart.svg'; ?>" alt="Иконка: нравится">
+                                                        <img src="<?php echo get_template_directory_uri().'/assets/images/heart-white.svg'; ?>" alt="Иконка: нравится">
                                                         <span class="likes-counter"><?php comments_number('0'); ?></span>
                                                     </div>
                                                 </div>
@@ -218,7 +219,6 @@
                                     <a href="<?php the_permalink(); ?>" class="article-grid-permalink">
                                         <h4 class="article-grid-title"><?php trim_title(50); ?></h4>
                                         <p class="article-grid-excerpt">
-                                            <!-- <?php echo get_the_excerpt(); ?> -->
                                             <?php echo mb_strimwidth(get_the_excerpt(), 0, 85); ?>
                                         </p>
                                         <span class="date"><?php the_time('j F'); ?></span>
@@ -241,4 +241,96 @@
     <?php get_sidebar( ); ?>
     </div>
 </div>
+<!-- /.container -->
+
+<?php		
+global $post;
+
+$query = new WP_Query( [
+    'posts_per_page' => 1,
+    'category_name' => 'investigation',
+] );
+
+if ( $query->have_posts() ) {
+	while ( $query->have_posts() ) {
+		$query->the_post();
+		?>
+		<section class="investigation" style="background: linear-gradient(0deg, rgba(64, 48, 61, 0.35), rgba(64, 48, 61, 0.35)), url(<?php echo get_the_post_thumbnail_url(); ?>) no-repeat center;">
+            <div class="container">
+                <h2 class="investigation-title"><?php the_title(); ?></h2>
+                <a href="<?php echo get_permalink( ); ?>" class="more">Читать статью</a>
+            </div>
+        </section>
+        <!-- /.investigation -->
+		<?php 
+	}
+} else {
+	// Постов не найдено
+}
+
+wp_reset_postdata(); // Сбрасываем $post
+?>
+<section class="articles-news">
+    <div class="container">
+        <div class="leftside">
+        <?php
+            global $post;
+
+            $myposts = get_posts([ 
+                'numberposts' => 6,
+            ]);
+
+            if( $myposts ){
+                foreach( $myposts as $post ){
+                    setup_postdata( $post );
+                    ?>
+                    <!-- Вывода постов, функции цикла: the_title() и т.д. -->
+                    <div class="article">
+                        <div class="image">
+                            <?php echo get_the_post_thumbnail(); ?>
+                        </div>
+                        <div class="content">
+                            <span class="category-name">
+                                <?php 
+                                    $category = get_the_category(); 
+                                    echo $category[0]->name;
+                                ?>
+                            </span>
+                            <a class="permalink-title" href="<?php the_permalink(); ?>">
+                                <h2 class="title">
+                                    <?php trim_title(100); ?>
+                                </h2>
+                            </a>
+                            <p class="text">
+                                <?php echo mb_strimwidth(get_the_excerpt(), 0, 180); ?>
+                            </p>
+                            <div class="down-info">
+                                <span class="date"><?php the_date( 'd F' ); ?></span>
+                                <div class="comments">
+                                    <img src="<?php echo get_template_directory_uri().'/assets/images/comment.svg'; ?>" alt="Иконка: комментарий" class="comments-icon">
+                                    <span class="comments-counter"><?php comments_number('0'); ?></span>
+                                </div>
+                                <div class="likes">
+                                    <img src="<?php echo get_template_directory_uri().'/assets/images/heart.svg'; ?>" alt="Иконка: нравится">
+                                    <span class="likes-counter"><?php comments_number('0'); ?></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php 
+                }
+            } else {
+                // Постов не найдено
+            }
+
+            wp_reset_postdata(); // Сбрасываем $post
+            ?>
+        </div>
+        <div class="rightside">
+
+        </div>
+    </div>
+</section>
+
+
 <?php get_footer();

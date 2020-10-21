@@ -74,6 +74,20 @@ body {
 button {
   cursor: pointer; }
 
+.more {
+  display: inline-block;
+  color: #ffffff;
+  padding: 10px 20px;
+  padding-right: 50px;
+  background: #4592FF url("../images/arrow.svg") no-repeat center right 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 900; }
+  .more:hover, .more:focus, .more:active, .more:visited {
+    color: #ffffff; }
+
 .home {
   background-color: #E5E5E5; }
 
@@ -154,14 +168,6 @@ button {
       margin-top: 20px;
       margin-bottom: 50px;
       max-width: 590px; }
-    .hero .left .more {
-      display: inline-block;
-      color: #ffffff;
-      padding: 10px 20px;
-      padding-right: 50px;
-      background: #4592FF url("../images/arrow.svg") no-repeat center right 20px;
-      border-radius: 20px;
-      text-decoration: none; }
   .hero .right {
     flex-basis: 25%; }
     .hero .right .recommend {
@@ -249,7 +255,7 @@ button {
 
 .article-grid {
   max-width: 850px;
-  margin: 30px 0;
+  margin: 30px 0 60px;
   padding: 0;
   list-style: none;
   display: grid;
@@ -540,9 +546,11 @@ button {
 
 .widget_social_widget .social-links {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
-  padding: 0 20px 40px; }
+  padding: 0 18px 30px;
+  overflow-y: auto;
+  max-height: 90px; }
 
 .widget_social_widget .social-link {
   width: 50px;
@@ -550,7 +558,8 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%; }
+  border-radius: 50%;
+  margin: 5px 10px; }
   .widget_social_widget .social-link img {
     height: 18px; }
   .widget_social_widget .social-link-facebook {
@@ -561,3 +570,79 @@ button {
     background: #FF0000; }
   .widget_social_widget .social-link-instagram {
     background: #FF3980; }
+
+.investigation {
+  padding: 50px 0 55px;
+  text-align: center; }
+  .investigation-title {
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 40px;
+    line-height: 50px;
+    font-weight: bold;
+    color: #ffffff;
+    max-width: 946px;
+    margin: 0 auto 25px; }
+
+.articles-news {
+  display: flex;
+  margin: 60px 0; }
+  .articles-news .leftside {
+    max-width: 848px;
+    border-radius: 10px;
+    background-color: #ffffff; }
+    .articles-news .leftside .article {
+      padding: 25px;
+      display: flex;
+      position: relative; }
+      .articles-news .leftside .article:not(:last-child)::after {
+        position: absolute;
+        bottom: 0;
+        content: '';
+        background: #D9DADB;
+        height: 1px;
+        width: calc(100% - 50px); }
+      .articles-news .leftside .article .image {
+        flex-shrink: 0;
+        width: 336px;
+        height: 195px;
+        margin-right: 25px; }
+        .articles-news .leftside .article .image img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover; }
+      .articles-news .leftside .article .content .category-name {
+        display: block;
+        margin-top: 5px;
+        text-transform: uppercase;
+        font-weight: 900; }
+      .articles-news .leftside .article .content .permalink-title {
+        color: #262D33;
+        text-decoration: none; }
+        .articles-news .leftside .article .content .permalink-title:hover {
+          text-decoration: underline; }
+        .articles-news .leftside .article .content .permalink-title:hover, .articles-news .leftside .article .content .permalink-title:active, .articles-news .leftside .article .content .permalink-title:visited, .articles-news .leftside .article .content .permalink-title:focus {
+          color: #262D33; }
+      .articles-news .leftside .article .content .title {
+        font-family: 'Roboto Slab', sans-serif;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        font-size: 20px;
+        line-height: 25px; }
+      .articles-news .leftside .article .content .text {
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-size: 14px;
+        line-height: 20px; }
+      .articles-news .leftside .article .down-info {
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        line-height: 15px;
+        color: #939699; }
+        .articles-news .leftside .article .down-info .comments {
+          margin: 0 10px; }
+        .articles-news .leftside .article .down-info .comments, .articles-news .leftside .article .down-info .likes {
+          display: flex;
+          align-items: center; }
+        .articles-news .leftside .article .down-info .comments-counter, .articles-news .leftside .article .down-info .likes-counter {
+          margin-left: 5px; }
