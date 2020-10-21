@@ -593,7 +593,9 @@ button {
     .articles-news .leftside .article {
       padding: 25px;
       display: flex;
-      position: relative; }
+      position: relative;
+      text-decoration: none;
+      color: #262D33; }
       .articles-news .leftside .article:not(:last-child)::after {
         position: absolute;
         bottom: 0;
@@ -615,13 +617,6 @@ button {
         margin-top: 5px;
         text-transform: uppercase;
         font-weight: 900; }
-      .articles-news .leftside .article .content .permalink-title {
-        color: #262D33;
-        text-decoration: none; }
-        .articles-news .leftside .article .content .permalink-title:hover {
-          text-decoration: underline; }
-        .articles-news .leftside .article .content .permalink-title:hover, .articles-news .leftside .article .content .permalink-title:active, .articles-news .leftside .article .content .permalink-title:visited, .articles-news .leftside .article .content .permalink-title:focus {
-          color: #262D33; }
       .articles-news .leftside .article .content .title {
         font-family: 'Roboto Slab', sans-serif;
         margin-top: 15px;

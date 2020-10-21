@@ -285,7 +285,7 @@ wp_reset_postdata(); // Сбрасываем $post
                     setup_postdata( $post );
                     ?>
                     <!-- Вывода постов, функции цикла: the_title() и т.д. -->
-                    <div class="article">
+                    <a href="<?php the_permalink(); ?>" class="article">
                         <div class="image">
                             <?php echo get_the_post_thumbnail(); ?>
                         </div>
@@ -296,16 +296,14 @@ wp_reset_postdata(); // Сбрасываем $post
                                     echo $category[0]->name;
                                 ?>
                             </span>
-                            <a class="permalink-title" href="<?php the_permalink(); ?>">
                                 <h2 class="title">
                                     <?php trim_title(100); ?>
                                 </h2>
-                            </a>
                             <p class="text">
                                 <?php echo mb_strimwidth(get_the_excerpt(), 0, 180); ?>
                             </p>
                             <div class="down-info">
-                                <span class="date"><?php the_date( 'd F' ); ?></span>
+                                <span class="date"><?php the_time( 'd F' ); ?></span>
                                 <div class="comments">
                                     <img src="<?php echo get_template_directory_uri().'/assets/images/comment.svg'; ?>" alt="Иконка: комментарий" class="comments-icon">
                                     <span class="comments-counter"><?php comments_number('0'); ?></span>
@@ -316,7 +314,7 @@ wp_reset_postdata(); // Сбрасываем $post
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                     <?php 
                 }
             } else {
