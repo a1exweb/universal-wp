@@ -28,7 +28,16 @@
 
                     <div class="post-text">
                         <span class="hero-post-categories">
-                            <?php the_category(' / '); ?>
+                            <?php 
+                                foreach (get_the_category() as $key => $category) {
+                                    printf(
+                                        '<a rel="category tag" href="%s" class="category-link %s">%s</a>',
+                                        esc_url(get_category_link($category)),
+                                        esc_html($category -> slug),
+                                        esc_html($category -> name)
+                                    );
+                                }
+                            ?>
                         </span>
                         <h2 class="post-title"><?php trim_title(60); ?></h2>
                         <a href="<?php echo get_permalink( ); ?>" class="more">Читать далее</a>
@@ -64,7 +73,16 @@
                     setup_postdata( $post );
                 ?>
                     <li class="post">
-                        <?php the_category(' / '); ?>
+                        <?php 
+                            foreach (get_the_category() as $key => $category) {
+                                printf(
+                                    '<a rel="category tag" href="%s" class="category-link %s">%s</a>',
+                                    esc_url(get_category_link($category)),
+                                    esc_html($category -> slug),
+                                    esc_html($category -> name)
+                                );
+                            }
+                        ?>
                         <a class="post-permalink" href="<?php echo get_the_permalink( ); ?>">
                             <h4 class="post-title"><?php trim_title(60); ?></h4>
                         </a>
@@ -219,7 +237,7 @@
                                     <a href="<?php the_permalink(); ?>" class="article-grid-permalink">
                                         <h4 class="article-grid-title"><?php trim_title(50); ?></h4>
                                         <p class="article-grid-excerpt">
-                                            <?php echo mb_strimwidth(get_the_excerpt(), 0, 85); ?>
+                                            <?php echo mb_strimwidth(get_the_excerpt(), 0, 85, '...'); ?>
                                         </p>
                                         <span class="date"><?php the_time('j F'); ?></span>
                                     </a>
@@ -238,7 +256,7 @@
                 wp_reset_postdata(); // Сбрасываем $post
             ?>
         </ul>
-    <?php get_sidebar( ); ?>
+    <?php get_sidebar('home-top'); ?>
     </div>
 </div>
 <!-- /.container -->
@@ -290,17 +308,20 @@ wp_reset_postdata(); // Сбрасываем $post
                             <?php echo get_the_post_thumbnail(); ?>
                         </div>
                         <div class="content">
-                            <span class="category-name">
-                                <?php 
-                                    $category = get_the_category(); 
-                                    echo $category[0]->name;
-                                ?>
-                            </span>
+                            <?php 
+                                foreach (get_the_category() as $key => $category) {
+                                    printf(
+                                        '<span class="category-name %s">%s</span>',
+                                        esc_html($category -> slug),
+                                        esc_html($category -> name)
+                                    );
+                                }
+                            ?>
                                 <h2 class="title">
                                     <?php trim_title(100); ?>
                                 </h2>
                             <p class="text">
-                                <?php echo mb_strimwidth(get_the_excerpt(), 0, 180); ?>
+                                <?php echo mb_strimwidth(get_the_excerpt(), 0, 180, '...'); ?>
                             </p>
                             <div class="down-info">
                                 <span class="date"><?php the_time( 'd F' ); ?></span>
@@ -325,7 +346,7 @@ wp_reset_postdata(); // Сбрасываем $post
             ?>
         </div>
         <div class="rightside">
-
+            <?php get_sidebar('home-bottom'); ?>
         </div>
     </div>
 </section>

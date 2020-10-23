@@ -88,6 +88,30 @@ button {
   .more:hover, .more:focus, .more:active, .more:visited {
     color: #ffffff; }
 
+.category-link.javascript {
+  color: #4592FF; }
+
+.category-link.css {
+  color: #3BBDC4; }
+
+.category-link.html {
+  color: #AC8EE3; }
+
+.category-link.web-design {
+  color: #FFA34D; }
+
+.category-name.news {
+  color: #4592FF; }
+
+.category-name.opinions {
+  color: #3BBDC4; }
+
+.category-name.hotter {
+  color: #FF4F52; }
+
+.category-name.collections {
+  color: #AC8EE3; }
+
 .home {
   background-color: #E5E5E5; }
 
@@ -118,7 +142,6 @@ button {
     position: relative;
     z-index: 1; }
     .hero-post-content a[rel='category tag'] {
-      color: #4592FF;
       text-transform: uppercase;
       text-decoration: none; }
   .hero .left {
@@ -193,7 +216,6 @@ button {
         font-size: 12px;
         line-height: 15px;
         text-transform: uppercase;
-        color: unset;
         text-decoration: none; }
       .hero .right .post-permalink {
         color: #4B5157;
@@ -452,6 +474,9 @@ button {
         justify-content: space-between;
         height: 100%; }
 
+body {
+  counter-reset: section; }
+
 .sidebar-front-page {
   margin-top: 30px;
   margin-left: 30px;
@@ -571,6 +596,50 @@ button {
   .widget_social_widget .social-link-instagram {
     background: #FF3980; }
 
+.recent-posts-wrapper {
+  padding: 0 25px 17px; }
+
+.recent-posts-widget a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 17px 0;
+  position: relative; }
+  .recent-posts-widget a:not(:last-child) {
+    border-bottom: 1px solid #D9DADB; }
+  .recent-posts-widget a::before {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5px;
+    counter-increment: section;
+    content: counter(section);
+    color: #262D33;
+    font-size: 70px;
+    line-height: 50px;
+    font-style: italic;
+    font-weight: 900;
+    opacity: 0.08; }
+
+.recent-posts-widget img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  margin-right: 10px; }
+
+.recent-posts-widget h4 {
+  font-size: 14px;
+  line-height: 20px;
+  color: #4B5157;
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 5px; }
+
+.recent-posts-widget span {
+  font-size: 12px;
+  line-height: 15px;
+  color: #939699; }
+
 .investigation {
   padding: 50px 0 55px;
   text-align: center; }
@@ -616,7 +685,9 @@ button {
         display: block;
         margin-top: 5px;
         text-transform: uppercase;
-        font-weight: 900; }
+        font-weight: 900;
+        font-size: 12px;
+        line-height: 15px; }
       .articles-news .leftside .article .content .title {
         font-family: 'Roboto Slab', sans-serif;
         margin-top: 15px;
@@ -633,7 +704,9 @@ button {
         align-items: center;
         font-size: 12px;
         line-height: 15px;
-        color: #939699; }
+        color: #939699;
+        position: absolute;
+        bottom: 28px; }
         .articles-news .leftside .article .down-info .comments {
           margin: 0 10px; }
         .articles-news .leftside .article .down-info .comments, .articles-news .leftside .article .down-info .likes {
@@ -641,3 +714,7 @@ button {
           align-items: center; }
         .articles-news .leftside .article .down-info .comments-counter, .articles-news .leftside .article .down-info .likes-counter {
           margin-left: 5px; }
+  .articles-news .container {
+    display: flex; }
+    .articles-news .container .sidebar-front-page {
+      margin-top: 0; }
