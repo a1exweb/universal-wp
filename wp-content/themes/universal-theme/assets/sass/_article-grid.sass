@@ -2,6 +2,25 @@
     display: flex
     justify-content: space-between
     align-items: flex-start
+    .social
+        &-icon
+            $color: #fff
+            &-facebook
+                width: 10px
+                height: 18px
+                fill: $color
+            &-twitter
+                width: 18px
+                height: 14.8px
+                fill: $color
+            &-youtube
+                width: 18px
+                height: 14.4px
+                fill: $color
+            &-instagram
+                width: 18px
+                height: 18px
+                fill: $color
 .article
     &-grid
         max-width: 850px
@@ -84,6 +103,10 @@
                                 font-size: 12px
                                 line-height: 15px
                                 color: #939699
+                            &-icon
+                                width: 13.5px
+                                height: 13.5px
+                                fill: #BCBFC2
             &:nth-of-type(2)
                 position: relative
                 background-color: transparent
@@ -161,6 +184,16 @@
                         margin-right: 7px
                     &-counter
                         margin-left: 5px
+                .comments
+                    &-icon
+                        width: 13.5px
+                        height: 13.5px
+                        fill: #fff
+                .likes
+                    &-icon
+                        width: 12.75px
+                        height: 11.7px
+                        fill: #fff
             &:nth-of-type(3)
                 grid-row: 2/4
                 .article-grid

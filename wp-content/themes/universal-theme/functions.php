@@ -28,8 +28,11 @@ add_action( 'after_setup_theme', 'universal_theme_setup' );
 // Connecting styles and scripts
 function enqueue_universal_style() {
     wp_enqueue_style( 'style', get_stylesheet_uri() );
+    wp_enqueue_style( 'swiper-slider', get_template_directory_uri().'/assets/css/swiper-bundle.min.css', 'style', null, null );
     wp_enqueue_style( 'universal-theme-style', get_template_directory_uri().'/assets/css/universal-theme.css', 'style', null, null );
-    wp_enqueue_style( 'Roboto-Slab', 'https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap' );
+	wp_enqueue_script( 'swiper', get_template_directory_uri().'/assets/js/swiper-bundle.min.js', null, null, true );
+	wp_enqueue_style( 'Roboto-Slab', 'https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap' );
+	wp_enqueue_script( 'scripts', get_template_directory_uri().'/assets/js/scripts.js', 'swiper', null, true );
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_universal_style' );
 
@@ -123,7 +126,9 @@ class Downloader_Widget extends WP_Widget {
         }
         if ( ! empty( $link ) ) {
             echo '<a target="_blank" rel="nofollow noopener" class="widget-link" href="' . $link . '">
-            <img class="widget-link-icon" src="'. get_template_directory_uri().'/assets/images/download.svg' .'" alt="Иконка: скачать">
+            <svg class="icon download-icon">
+				<use xlink:href="'.get_template_directory_uri().'/assets/images/sprite.svg#download"></use>
+			</svg>
             Скачать</a>';
 		}
 		echo $args['after_widget'];
@@ -260,16 +265,32 @@ class Social_Widget extends WP_Widget {
 		}
 		echo '<div class="social-links">';
 		if ( ! empty( $facebook ) ) {
-			echo '<a target="_blank" rel="nofollow noopener" class="social-link social-link-facebook" href='.$facebook.'><img src="'.get_template_directory_uri().'/assets/images/facebook.svg'.'" alt="Иконка: facebook"></a>';
+			echo '<a target="_blank" rel="nofollow noopener" class="social-link social-link-facebook" href='.$facebook.'>
+			<svg class="icon social-icon-facebook">
+				<use xlink:href="'.get_template_directory_uri().'/assets/images/sprite.svg#facebook"></use>
+			</svg>
+			</a>';
 		}
 		if ( ! empty( $twitter ) ) {
-			echo '<a target="_blank" rel="nofollow noopener" class="social-link social-link-twitter " href='.$twitter.'><img src="'.get_template_directory_uri().'/assets/images/twitter.svg'.'" alt="Иконка: twitter"></a>';
+			echo '<a target="_blank" rel="nofollow noopener" class="social-link social-link-twitter " href='.$twitter.'>
+			<svg class="icon social-icon-twitter">
+				<use xlink:href="'.get_template_directory_uri().'/assets/images/sprite.svg#twitter"></use>
+			</svg>
+			</a>';
 		}
 		if ( ! empty( $youtube ) ) {
-			echo '<a target="_blank" rel="nofollow noopener" class="social-link social-link-youtube" href='.$youtube.'><img src="'.get_template_directory_uri().'/assets/images/youtube.svg'.'" alt="Иконка: youtube"></a>';
+			echo '<a target="_blank" rel="nofollow noopener" class="social-link social-link-youtube" href='.$youtube.'>
+			<svg class="icon social-icon-youtube">
+				<use xlink:href="'.get_template_directory_uri().'/assets/images/sprite.svg#youtube"></use>
+			</svg>
+			</a>';
 		}
 		if ( ! empty( $instagram ) ) {
-			echo '<a target="_blank" rel="nofollow noopener" class="social-link social-link-instagram" href='.$instagram.'><img src="'.get_template_directory_uri().'/assets/images/instagram.svg'.'" alt="Иконка: instagram"></a>';
+			echo '<a target="_blank" rel="nofollow noopener" class="social-link social-link-instagram" href='.$instagram.'>
+			<svg class="icon social-icon-instagram">
+				<use xlink:href="'.get_template_directory_uri().'/assets/images/sprite.svg#instagram"></use>
+			</svg>
+			</a>';
 		}
 		echo '</div>';
 		echo $args['after_widget'];
@@ -409,7 +430,13 @@ class Recent_Posts_Widget extends WP_Widget {
 					setup_postdata($post);
 					?>
 					<a href="<?php echo get_the_permalink(); ?>" class="recent-post-link">
-						<img class="recent-post-thumbnail" src="<?php echo get_the_post_thumbnail_url(null,'thumbnail'); ?>" alt="">
+						<img class="recent-post-thumbnail" src="<?php
+							if (has_post_thumbnail( )) {
+								echo get_the_post_thumbnail_url(null, 'thumbnail');
+							} else {
+								echo get_template_directory_uri().'/assets/images/img-default.jpg"';
+							}
+						?>" alt="">
 						<div class="recent-post-info">
 							<h4 class="recent-post-title">
 								<?php trim_title(35); ?>
