@@ -1,7 +1,7 @@
 <svg width="0" height="0" class="hidden">
-  <!-- <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 7" id="arrow">
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 3v1h11v3l4-3.5L11 0v3H0z"></path>
-  </symbol> -->
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 7" id="arrow">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 3v1h11v3l4-3.5L11 0v3H0z" fill="#ffffff"></path>
+  </symbol>
   <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 14" id="comment">
     <path fill-rule="evenodd" clip-rule="evenodd" d="M11.135 11v3L8.36 11H2.25a1.5 1.5 0 01-1.5-1.5V2A1.5 1.5 0 012.25.5h10.5a1.5 1.5 0 011.5 1.5v7.5a1.5 1.5 0 01-1.5 1.5h-1.615z"></path>
   </symbol>
