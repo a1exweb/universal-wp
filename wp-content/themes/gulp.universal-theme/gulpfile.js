@@ -2,11 +2,18 @@ const gulp = require('gulp');
 const browserSync = require('browser-sync').create();
 const sass = require('gulp-sass');
 const notify = require('gulp-notify');
+const autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('sass', function(done) {
     gulp.src("../universal-theme/assets/sass/*.sass", "../universal-theme/assets/sass/*.scss")
         .pipe(sass())
         .on('error', notify.onError('Error: <%= error.message %>'))
+        .pipe(autoprefixer({
+            cascade: false,
+            overrideBrowserslist : [
+                "last 20 version"
+            ]
+        }))
         .pipe(gulp.dest("../universal-theme/assets/css/"))
         .pipe(browserSync.stream())
     done();
