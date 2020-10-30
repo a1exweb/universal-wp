@@ -51,6 +51,7 @@
             right: 0
             bottom: 0
             height: 100%
+            width: 100%
             object-fit: cover
         .author
             display: flex
@@ -112,3 +113,29 @@
                 font-weight: normal
                 margin-bottom: 0
                 margin-top: 8px
+@media screen and ( max-width: 1200px )
+    .hero
+        .right
+            flex-basis: 35%
+    .front-page
+        &-header
+            height: auto
+            padding-bottom: 30px
+@media screen and ( max-width: 992px )
+    .hero 
+        .left 
+            .post-title
+                font-size: 30px
+                line-height: 1.2
+                max-width: 350px
+@media screen and ( max-width: 768px )
+    .hero
+        flex-direction: column
+        .left
+            padding: 25px
+            flex-basis: 100%
+            .author
+                margin-bottom: 20px
+            .post-title
+                max-width: 250px
+                font-size: 22px

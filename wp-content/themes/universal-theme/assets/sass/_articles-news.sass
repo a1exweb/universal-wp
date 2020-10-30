@@ -75,3 +75,18 @@
         display: flex
         .sidebar-front-page
             margin-top: 0
+@media screen and ( max-width: 1300px )
+    .articles-news
+        .container
+            flex-direction: column
+            .leftside
+                max-width: unset
+                .article
+                    flex-direction: column
+                    .image
+                        width: 100%
+                        height: 50vw
+                        margin-bottom: 25px
+            .sidebar-front-page
+                margin-top: 30px
+                margin-left: 0

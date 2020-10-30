@@ -1,6 +1,7 @@
 var mySwiper = new Swiper('.swiper-container', {
     // Optional parameters
     loop: true,
+    spaceBetween: 100,
     autoplay: {
         delay: 5000,
     },
@@ -9,3 +10,8 @@ var mySwiper = new Swiper('.swiper-container', {
         el: '.swiper-pagination',
     },
 })
+let menuToggle = $('.header-menu-toggle');
+menuToggle.on('click', function(event){
+    event.preventDefault();
+    $('.header-nav').slideToggle(200);
+});

@@ -13,6 +13,7 @@
         list-style: none
         display: grid
         grid-template: minmax(370px, max-content) repeat(2, 170px) / repeat(3, 1fr)
+        grid-auto-rows: minmax(170px, max-content)
         grid-gap: 30px
         &-permalink
             text-decoration: none
@@ -223,5 +224,50 @@
                         flex-direction: column
                         justify-content: space-between
                         height: 100%
-
-
+@media screen and ( max-width: 1300px )
+    .article
+        &-grid
+            max-width: unset
+            width: 80%
+            grid-template-columns: repeat(auto-fill, minmax(35%, 1fr))
+            grid-template-rows: auto-fit
+    .article-grid-item
+        &:nth-of-type(1)
+            grid-column: span 2
+        &:nth-of-type(2)
+            grid-column: span 2
+            grid-row: span 2
+        &:nth-of-type(3)
+            grid-column: span 2
+            grid-row: unset
+    .article-grid-item-default
+        min-height: 220px
+        
+@media screen and ( max-width: 1200px )
+    .article
+        &-grid
+            width: 60%
+            grid-template-columns: 1fr
+    .article-grid-item
+        &:nth-of-type(2)
+            min-height: 220px
+            .tag
+                margin-bottom: 10px
+    .article-grid-item-default
+        grid-column: span 2
+        min-height: unset
+    .article-grid
+        margin-bottom: 0
+        width: 100%
+    .main-grid
+        flex-direction: column
+        margin-bottom: 60px
+@media screen and ( max-width: 576px )
+    .article-grid-item
+        &:nth-of-type(1) 
+            .article-grid-info
+                .author-name
+                    text-overflow: ellipsis
+                    max-width: 150px
+            .article-grid-excerpt
+                width: 100%
