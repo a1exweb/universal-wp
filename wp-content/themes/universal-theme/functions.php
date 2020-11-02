@@ -550,6 +550,9 @@ function register_recent_posts_widget() {
 }
 add_action( 'widgets_init', 'register_recent_posts_widget' );
 
+add_filter('excerpt_more', function($more) {
+	return '...';
+});
 
 // remove versions
 function rem_wp_ver_css_js( $src ) {

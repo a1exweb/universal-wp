@@ -32,4 +32,13 @@
   <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 16" id="youtube">
     <path fill-rule="evenodd" clip-rule="evenodd" d="M9 .8c-2.898 0-6.66.73-6.66.73l-.009.01A2.77 2.77 0 000 4.277v7.445a2.778 2.778 0 002.338 2.743l.003.004S6.102 15.2 9 15.2c2.898 0 6.66-.73 6.66-.73A2.78 2.78 0 0018 11.722V4.277a2.778 2.778 0 00-2.338-2.744C15.66 1.53 11.898.8 9 .8zM7.2 4.85L12.6 8l-5.4 3.15v-6.3z"></path>
   </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 17" id="home">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M2 17h5v-6h4v6h5v-7h2L9 0 0 10h2v7z" fill="#fff"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 18" id="bookmark">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M2 0h10a2 2 0 012 2v16l-6.905-5L0 18V2a2 2 0 012-2z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" id="clock">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 14.25a6.75 6.75 0 110-13.5 6.75 6.75 0 010 13.5zm.75-6.75v-3a.75.75 0 00-1.5 0v3.75c0 .414.336.75.75.75h2.25a.75.75 0 000-1.5h-1.5z"></path>
+  </symbol>
 </svg>
