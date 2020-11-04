@@ -224,10 +224,7 @@ button {
 
 .category-link {
   text-decoration: none;
-  text-transform: uppercase;
-  color: inherit; }
-  .category-link:hover, .category-link:focus, .category-link:active, .category-link:visited {
-    color: inherit; }
+  text-transform: uppercase; }
   .category-link.javascript {
     color: #4592FF; }
   .category-link.css {
@@ -312,6 +309,9 @@ button {
   width: 18px;
   height: 18px;
   fill: #fff; }
+
+a:hover, a:focus, a:active {
+  color: #4169e1; }
 
 .home {
   background-color: #E5E5E5; }
@@ -1825,5 +1825,84 @@ body {
 
 .post-header {
   height: 590px; }
-  .post-header .container {
-    padding: 0 100px; }
+
+.post-content {
+  max-width: 623px;
+  padding-top: 60px; }
+  .post-content p {
+    font-size: 18px;
+    line-height: 30px;
+    color: #4b5157;
+    margin: 30px 0; }
+  .post-content .has-drop-cap:not(:focus):first-letter {
+    color: #4592ff;
+    font-weight: 900; }
+  .post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6 {
+    font-family: 'Roboto Slab', sans-serif;
+    font-weight: bold; }
+  .post-content h1 {
+    font-size: 30px; }
+  .post-content h2 {
+    font-size: 25px;
+    line-height: 30px; }
+  .post-content h3 {
+    font-size: 22px; }
+  .post-content h4 {
+    font-size: 18px; }
+  .post-content h5 {
+    font-size: 16px; }
+  .post-content h6 {
+    font-size: 14px; }
+  .post-content ul, .post-content ol {
+    padding: 0;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    font-size: 18px; }
+  .post-content blockquote {
+    font-family: 'Roboto Slab', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 30px;
+    margin-left: 0;
+    margin-top: 80px;
+    margin-bottom: 45px;
+    position: relative; }
+    .post-content blockquote::before {
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      content: '';
+      background: url(../images/quote.svg) no-repeat center;
+      width: 70px;
+      height: 70px;
+      z-index: -1; }
+    .post-content blockquote cite {
+      font-style: normal; }
+
+.post .tags-links a {
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 900;
+  color: #262d33;
+  padding: 5px 15px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #d9dadb;
+  margin-right: 10px; }
+
+.post .wp-block-table table {
+  border-spacing: 0;
+  border: 2px solid #000; }
+
+.post .wp-block-table td {
+  border: 1px solid #ccc;
+  padding: 15px; }
+
+.post .wp-block-file a:first-child {
+  text-decoration: none;
+  color: #4b5157; }
+
+.post .container {
+  padding: 0 100px; }

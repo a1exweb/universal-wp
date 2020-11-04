@@ -85,7 +85,85 @@
             align-items: center
         .likes, .comments
             margin-left: 20px
-.post-header
-    height: 590px
+.post
+    &-header
+        height: 590px
+    &-content
+        max-width: 623px
+        padding-top: 60px
+        p
+            font-size: 18px
+            line-height: 30px
+            color: #4b5157
+            margin: 30px 0
+        .has-drop-cap
+            &:not(:focus)
+                &:first-letter
+                    color: #4592ff
+                    font-weight: 900
+        h1, h2, h3, h4, h5, h6
+            font-family: 'Roboto Slab', sans-serif
+            font-weight: bold
+        h1
+            font-size: 30px
+        h2
+            font-size: 25px
+            line-height: 30px
+        h3
+            font-size: 22px
+        h4
+            font-size: 18px
+        h5
+            font-size: 16px
+        h6
+            font-size: 14px
+        ul, ol
+            padding: 0
+            margin-top: 20px
+            margin-left: 20px
+            margin-bottom: 20px
+            font-size: 18px
+        blockquote
+            font-family: 'Roboto Slab', sans-serif
+            font-weight: bold
+            font-size: 25px
+            line-height: 30px
+            margin-left: 0
+            margin-top: 80px
+            margin-bottom: 45px
+            position: relative
+            &::before
+                position: absolute
+                top: -20px
+                left: -20px
+                content: ''
+                background: url(../images/quote.svg) no-repeat center
+                width: 70px
+                height: 70px
+                z-index: -1
+            cite
+                font-style: normal
+    .tags-links
+        a
+            text-decoration: none
+            font-size: 14px
+            line-height: 20px
+            font-weight: 900
+            color: #262d33
+            padding: 5px 15px
+            border-radius: 5px
+            border: 1px solid #d9dadb
+            margin-right: 10px
+    .wp-block-table
+        table
+            border-spacing: 0
+            border: 2px solid #000
+        td
+            border: 1px solid #ccc
+            padding: 15px
+    .wp-block-file
+        a:first-child
+            text-decoration: none
+            color: #4b5157
     .container
         padding: 0 100px
