@@ -29,7 +29,7 @@ gulp.task('serve', function(done) {
 
     gulp.watch("../universal-theme/assets/sass/*.sass", gulp.parallel('sass'));
     gulp.watch("../universal-theme/assets/sass/*.scss", gulp.parallel('sass'));
-    gulp.watch("../universal-theme/*.*").on('change', () => {
+    gulp.watch("../universal-theme/*.*, ../universal-theme/**/*.*").on('change', () => {
         browserSync.reload();
         done();
     });
