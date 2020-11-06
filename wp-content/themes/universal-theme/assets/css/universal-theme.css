@@ -49,6 +49,9 @@ body {
     .header-menu-toggle {
       display: none; }
 
+.custom-logo {
+  max-width: 40px; }
+
 .menu-item a {
   text-decoration: none;
   color: #ffffff;
