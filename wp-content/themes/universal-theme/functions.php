@@ -9,12 +9,42 @@ if ( ! function_exists( 'universal_theme_setup' ) ) :
         add_theme_support( 'post-thumbnails', array('post') );
 
         // Add custom logo
-        add_theme_support( 'custom-logo', [
-            'width'       => 163,
-            'flex-height' => true,
-            'header-text' => 'Universal',
-            'unlink-homepage-logo' => false,
-        ] );
+        // add_theme_support( 'custom-logo', [
+        //     'width'       => 163,
+        //     'flex-height' => true,
+        //     'header-text' => 'Universal',
+        //     'unlink-homepage-logo' => false,
+		// ] );
+		
+		add_action( 'customize_register', 'custom_logo_uploader' );
+		function custom_logo_uploader($wp_customize) {
+		
+			$wp_customize->add_section( 'upload_custom_logo', array(
+				'title'          => 'Логотип',
+				'description'    => 'Отображение собственного логотипа?',
+				'priority'       => 25,
+			) );
+		
+			$wp_customize->add_setting( 'custom_logo', array(
+				'default'        => '',
+			) );
+		
+			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'custom_logo', array(
+				'label'   => 'Пользовательский логотип',
+				'section' => 'upload_custom_logo',
+				'settings'   => 'custom_logo',
+			) ) );
+		
+			$wp_customize->add_setting( 'custom_logo_2', array(
+				'default'        => '',
+			) );
+		
+			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'custom_logo_2', array(
+				'label'   => 'Пользовательский логотип',
+				'section' => 'upload_custom_logo', // put the name of whatever section you want to add your settings
+				'settings'   => 'custom_logo_2',
+			) ) );
+		}
 
         // Registration menu
         register_nav_menus( [

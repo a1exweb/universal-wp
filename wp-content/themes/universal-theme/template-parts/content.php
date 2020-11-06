@@ -86,11 +86,10 @@
                 <div class="post-author">
                     <div class="post-author-info">
                     <?php $author_id = get_the_author_meta('ID'); ?>
-                        <img src="<?php echo get_avatar_url( $author_id ); ?>" alt="" class="author-avatar">
-                        <div class="author-bio">
-                            <span class="author-name"><?php the_author( ); ?></span>
-                            <span class="author-rank">Должность</span>
-                            <span class="author-posts">
+                        <img src="<?php echo get_avatar_url( $author_id ); ?>" alt="" class="post-author-avatar">
+                            <span class="post-author-name"><?php the_author( ); ?></span>
+                            <span class="post-author-rank">Должность</span>
+                            <span class="post-author-posts">
                             <?php
                                 plural_form(
                                     count_user_posts($author_id),
@@ -99,7 +98,6 @@
                                 );
                             ?>
                             </span>
-                        </div>
                     </div>
                     <a href="<?php echo get_author_posts_url( $author_id ); ?>" class="post-author-link">Страница автора</a>
                 </div>

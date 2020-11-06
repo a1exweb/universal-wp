@@ -67,6 +67,10 @@
                 font-weight: 900
                 font-size: 14px
                 line-height: 20px
+            li:first-child a
+                margin-left: 0
+            li:last-child a
+                margin-right: 0
     &-nav
         display: flex
         align-items: center
@@ -80,6 +84,17 @@
             p
                 margin-top: 0
                 margin-bottom: 25px
+    &-logo-link
+        color: #4592ff
+        text-decoration: none
+        font-family: 'Roboto Slab', sans-serif
+        margin-right: 30px
+        &:visited, &:focus, &:active
+            color: #4592ff
+    .logo-image
+        margin-right: 30px
+.menu-footer-menu-container
+    margin-right: auto
 @media screen and ( max-width: 1300px )
     .footer
         &-menu
@@ -93,6 +108,13 @@
             flex-direction: column
         &-text-wrapper
             flex-direction: column
+        .logo-image
+            margin-right: unset
+        &-logo-link
+            margin-right: unset
+        .menu-footer-menu-container
+            margin-top: 20px
+            margin-right: unset
     .footer-info ul
         margin-bottom: 20px
 
@@ -102,6 +124,11 @@
             width: 50%
             &-bar
                 width: 80%
+        &-info ul
+            li:first-child a
+                margin-left: 10px
+            li:last-child a
+                margin-right: 10px
 @media screen and ( max-width: 576px )
     .footer
         &-menu

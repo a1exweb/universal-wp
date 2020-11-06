@@ -12,11 +12,21 @@
         <div class="header-wrapper">
             <?php
                 if( has_custom_logo() ){
+                    echo '<a class="logo-link" href="'.get_home_url().'">'. 
+                    '<img class="logo-image" src="'. get_theme_mod('custom_logo_2') .'"><span class="logo-name">'
+                    . get_bloginfo('name') . '</span></a>';
+                } else {
+                    echo '<a class="logo-link" href="'.get_home_url().'"><span class="logo-name">'. get_bloginfo('name') .'</span></a>';
+                }
+            ?>
+
+            <!-- <?php
+                if( has_custom_logo() ){
                     the_custom_logo();
                 } else {
                     echo 'Universal';
                 }
-            ?>
+            ?> -->
             <?php 
                 wp_nav_menu( [
                     'theme_location'  => 'header_menu',

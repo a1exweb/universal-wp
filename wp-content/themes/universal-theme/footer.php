@@ -12,6 +12,15 @@
         <!-- /.footer-menu-bar -->
         <div class="footer-info">
             <?php
+                    if( has_custom_logo() ){
+                        echo '<a class="logo-link" href="'.get_home_url().'">'. 
+                        '<img class="logo-image" src="'. get_theme_mod('custom_logo_2') .'"></a>';
+                    } else {
+                        echo '<a class="footer-logo-link" href="'.get_home_url().'">'. get_bloginfo('name') .'</a>';
+                    }
+            ?>
+
+            <?php
                 wp_nav_menu( [
                     'theme_location' => 'footer_menu',
                     'container'      =>  'nav',
