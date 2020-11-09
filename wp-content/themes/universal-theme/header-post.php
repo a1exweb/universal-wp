@@ -7,7 +7,7 @@
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<header class="header">
+<header class="header header-light">
     <div class="container">
         <div class="header-wrapper">
             <?php

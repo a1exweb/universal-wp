@@ -339,7 +339,7 @@ wp_reset_postdata(); // Сбрасываем $post
                     setup_postdata( $post );
                     ?>
                     <!-- Вывода постов, функции цикла: the_title() и т.д. -->
-                    <a href="<?php the_permalink(); ?>" class="article">
+                    <div class="article">
                         
                         
                         <div class="image">
@@ -363,9 +363,11 @@ wp_reset_postdata(); // Сбрасываем $post
                                     );
                                 }
                             ?>
+                            <a href="<?php the_permalink(); ?>">
                                 <h2 class="title">
                                     <?php trim_title(100); ?>
                                 </h2>
+                            </a>
                             <p class="text">
                                 <?php echo mb_strimwidth(get_the_excerpt(), 0, 180, '...'); ?>
                             </p>
@@ -385,7 +387,7 @@ wp_reset_postdata(); // Сбрасываем $post
                                 </div>
                             </div>
                         </div>
-                    </a>
+                    </div>
                     <?php 
                 }
             } else {
