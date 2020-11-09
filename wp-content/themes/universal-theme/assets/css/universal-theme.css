@@ -1194,6 +1194,9 @@ body {
       position: relative;
       text-decoration: none;
       color: #262D33; }
+      .articles-news .leftside .article a {
+        color: #263d33;
+        text-decoration: none; }
       .articles-news .leftside .article:not(:last-child)::after {
         position: absolute;
         bottom: 0;
@@ -1202,9 +1205,6 @@ body {
         height: 1px;
         width: -webkit-calc(100% - 50px);
         width: calc(100% - 50px); }
-      .articles-news .leftside .article:not(:last-child) a {
-        color: #263d33;
-        text-decoration: none; }
       .articles-news .leftside .article .bookmark-icon {
         width: 14px;
         height: 18px;
