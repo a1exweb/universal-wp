@@ -48,9 +48,15 @@
                 <div class="header-post">
                 <?php
                     if ( is_singular() ) :
-                        the_title( '<h1 class="post-title">', '</h1>' );
+                        // the_title( '<h1 class="post-title">', '</h1>' );
+                        echo '<h1 class="post-title">';
+                        trim_title(60);
+                        echo '</h1>';
                     else :
-                        the_title( '<h2 class="post-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+                        // the_title( '<h2 class="post-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+                        echo '<h2 class="post-title"><a href="'. esc_url( get_permalink() ) . '" rel="bookmark">';
+                        echo trim_title(60);
+                        echo '</a></h2>';
                     endif;?>
 
                     <svg class="icon bookmark-icon">
@@ -143,11 +149,14 @@
                 }
                 // Share social
                 meks_ess_share();
+                
             ?>
         </footer><!-- .post-footer -->
 
     </div>
     <!-- /.container -->
+
+    <?php get_sidebar('post'); ?>
 
     
 </article>

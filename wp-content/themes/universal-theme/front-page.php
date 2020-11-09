@@ -340,9 +340,7 @@ wp_reset_postdata(); // Сбрасываем $post
                     ?>
                     <!-- Вывода постов, функции цикла: the_title() и т.д. -->
                     <a href="<?php the_permalink(); ?>" class="article">
-                        <svg class="icon bookmark-icon">
-                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#bookmark"></use>
-                        </svg>
+                        
                         
                         <div class="image">
                             <?php 
@@ -357,7 +355,9 @@ wp_reset_postdata(); // Сбрасываем $post
                             <?php 
                                 foreach (get_the_category() as $key => $category) {
                                     printf(
-                                        '<span class="category-name %s">%s</span>',
+                                        '<div class="header-post"><span class="category-name %s">%s</span><svg class="icon bookmark-icon">
+                                        <use xlink:href="'. get_template_directory_uri().'/assets/images/sprite.svg#bookmark"></use>
+                                    </svg></div>',
                                         esc_html($category -> slug),
                                         esc_html($category -> name)
                                     );
