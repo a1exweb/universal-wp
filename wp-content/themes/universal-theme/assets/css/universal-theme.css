@@ -1965,7 +1965,8 @@ body {
       color: #262D33; }
 
 .post-content {
-  padding-top: 60px; }
+  padding-top: 60px;
+  padding-bottom: 30px; }
   .post-content p {
     font-size: 18px;
     line-height: 30px;
@@ -2021,17 +2022,23 @@ body {
     .post-content blockquote cite {
       font-style: normal; }
 
-.post .tags-links a {
-  text-decoration: none;
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 900;
-  color: #262d33;
-  padding: 5px 15px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  border: 1px solid #d9dadb;
-  margin-right: 10px; }
+.post .tags-links {
+  display: block;
+  padding-bottom: 60px;
+  border-bottom: 1px solid #D9DADB;
+  max-width: 623px;
+  width: 100%; }
+  .post .tags-links a {
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 900;
+    color: #262d33;
+    padding: 5px 15px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #d9dadb;
+    margin-right: 10px; }
 
 .post .wp-block-table table {
   border-spacing: 0;
@@ -2047,3 +2054,13 @@ body {
 
 .post .container {
   padding: 0 100px; }
+
+.meks_ess {
+  max-width: 623px;
+  margin-top: 0; }
+  .meks_ess_share_label {
+    font-size: 25px;
+    line-height: 30px;
+    font-family: 'Roboto Slab', sans-serif;
+    margin-top: 30px;
+    margin-bottom: 25px; }
