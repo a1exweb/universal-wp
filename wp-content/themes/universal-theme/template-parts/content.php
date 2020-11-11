@@ -79,13 +79,13 @@
                         <svg class="icon likes-icon">
                             <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#heart"></use>
                             </svg>
-                            <span class="likes-counter"><?php comments_number('0'); ?></span>
+                            <span class="likes-counter"><?php comments_number('0', '1', '%'); ?></span>
                     </div>
                     <div class="comments">
                         <svg class="icon comments-icon">
                             <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#comment"></use>
                         </svg>
-                        <span class="comments-counter"><?php comments_number('0'); ?></span>
+                        <span class="comments-counter"><?php comments_number('0', '1', '%'); ?></span>
                     </div>                
                 </div>
 

@@ -647,13 +647,13 @@ class Post_Widget extends WP_Widget {
 									<svg class="icon views-icon">
 										<use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#views"></use>
 									</svg>
-                                    <span class="views-counter"><?php comments_number('0'); ?></span>
+                                    <span class="views-counter"><?php comments_number('0', '1', '%'); ?></span>
 								</div>
 								<div class="comments">
 									<svg class="icon comments-icon">
 										<use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#comment"></use>
 									</svg>
-                                    <span class="comments-counter"><?php comments_number('0'); ?></span>
+                                    <span class="comments-counter"><?php comments_number('0', '1', '%'); ?></span>
                                 </div>
 							</div>
 						</div>

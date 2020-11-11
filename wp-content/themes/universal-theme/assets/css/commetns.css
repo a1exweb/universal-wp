@@ -1,0 +1,13 @@
+.comments-area {
+  max-width: 750px; }
+
+.comments-title {
+  font-family: 'Roboto Slab', sans-serif;
+  font-size: 40px;
+  line-height: 50px; }
+
+.comments-count {
+  color: #939699;
+  font-family: 'Lato', sans-serif;
+  font-size: 40px;
+  line-height: 50px; }
