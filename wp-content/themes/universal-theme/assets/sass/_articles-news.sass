@@ -1,16 +1,26 @@
+.home
+    .articles-news
+        padding: 60px 0
 .articles-news
     display: flex
-    margin: 60px 0
+    .rightside
+        align-self: flex-start
     .leftside
+        max-width: 848px
+        width: 100%
+    .articles-wrapper
         max-width: 848px
         border-radius: 10px
         background-color: #ffffff
+        align-self: flex-start
+        width: 100%
+        padding: 0 25px
         .article
-            padding: 25px
             display: flex
             position: relative
             text-decoration: none
             color: #262D33
+            padding: 25px 0
             a
                 color: #263d33
                 text-decoration: none
@@ -21,7 +31,7 @@
                     content: ''
                     background: #D9DADB
                     height: 1px
-                    width: calc(100% - 50px)
+                    width: 100%
             .bookmark-icon
                 width: 14px
                 height: 18px

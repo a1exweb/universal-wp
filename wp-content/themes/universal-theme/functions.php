@@ -451,11 +451,10 @@ function register_social_widget() {
 add_action( 'widgets_init', 'register_social_widget' );
 
 
-
 /**
- * Добавление нового виджета Recent_Posts_Widget.
+ * Добавление нового виджета Recent_Widget.
  */
-class Recent_Posts_Widget extends WP_Widget {
+class Recent_Widget extends WP_Widget {
 
 	// Регистрация виджета используя основной класс
 	function __construct() {
@@ -579,11 +578,20 @@ class Recent_Posts_Widget extends WP_Widget {
 		if( ! apply_filters( 'show_recent_posts_widget_style', true, $this->id_base ) )
 			return;
 		?>
+		<style type="text/css">
+			.recent_posts_widget a{ display:inline; }
+		</style>
 		<?php
 	}
 
 } 
-// конец класса Recent_Posts_Widget
+// конец класса Recent_Widget
+
+// регистрация Recent_Widget в WordPress
+function register_recent_posts_widget() {
+	register_widget( 'Recent_Widget' );
+}
+add_action( 'widgets_init', 'register_recent_posts_widget' );
 
 
 /**

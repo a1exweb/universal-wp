@@ -17,15 +17,7 @@ button
 .category-link
     text-decoration: none
     text-transform: uppercase
-    &.javascript
-        color: #4592FF
-    &.css
-        color: #3BBDC4
-    &.html
-        color: #AC8EE3
-    &.web-design
-        color: #FFA34D
-.category-name
+.category-name, .category-link
     &.news
         color: #4592FF
     &.opinions
@@ -34,6 +26,14 @@ button
         color: #FF4F52
     &.collections
         color: #AC8EE3
+    &.javascript
+        color: #4592FF
+    &.css
+        color: #3BBDC4
+    &.html
+        color: #AC8EE3
+    &.web-design
+        color: #FFA34D
 .social
     &-links
         display: flex
@@ -79,3 +79,7 @@ button
             fill: $color
 a:hover, a:focus, a:active
     color: #4169e1
+input.input
+    padding: 10px 15px
+    border: 1px solid #d9dadb
+    border-radius: 5px
