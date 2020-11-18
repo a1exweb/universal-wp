@@ -156,10 +156,29 @@
                 margin-left: 10px
             li:last-child a
                 margin-right: 10px
+        &-form
+            &-wrapper
+                text-align: center
+                align-items: flex-start
+            &-title
+                font-size: 30px
+                line-height: 40px
 @media screen and ( max-width: 576px )
     .footer
         &-menu
             width: 100%
+        &-form
+            flex-direction: column
+            width: 100%
+            &-title
+                font-size: 25px
+                line-height: 30px
+            input
+                width: 100%
+                min-width: unset
+                margin-right: 0
+            button
+                width: 100%
     .footer-info 
         ul
             display: flex

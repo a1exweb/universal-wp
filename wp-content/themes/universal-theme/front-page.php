@@ -233,7 +233,7 @@
                                                         <span class="comments-counter"><?php comments_number('0', '1', '%'); ?></span>
                                                     </div>
                                                     <div class="likes">
-                                                        <svg class="icon comments-icon">
+                                                        <svg class="icon likes-icon">
                                                             <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#heart"></use>
                                                         </svg>
                                                         <span class="likes-counter"><?php comments_number('0', '1', '%'); ?></span>
@@ -356,15 +356,16 @@ wp_reset_postdata(); // Сбрасываем $post
                             <?php 
                                 foreach (get_the_category() as $key => $category) {
                                     printf(
-                                        '<div class="header-post"><span class="category-name %s">%s</span><svg class="icon bookmark-icon">
+                                        '<div class="header-post"><a rel="category tag" href="%s" class="category-link %s">%s</a><svg class="icon bookmark-icon">
                                         <use xlink:href="'. get_template_directory_uri().'/assets/images/sprite.svg#bookmark"></use>
                                     </svg></div>',
-                                        esc_html($category -> slug),
-                                        esc_html($category -> name)
+                                    esc_url(get_category_link($category)),
+                                    esc_html($category -> slug),
+                                    esc_html($category -> name)
                                     );
                                 }
                             ?>
-                            <a href="<?php the_permalink(); ?>">
+                            <a class="title-link" href="<?php the_permalink(); ?>">
                                 <h2 class="title">
                                     <?php trim_title(100); ?>
                                 </h2>

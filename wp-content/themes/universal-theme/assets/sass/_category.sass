@@ -1,0 +1,88 @@
+.category
+    background: #EDEFF0
+    &-title
+        font-family: 'Roboto Slab', sans-serif
+        font-weight: bold
+        font-size: 40px
+        line-height: 50px
+.post
+    &-list
+        display: flex
+        flex-wrap: wrap
+    &-card
+        width: 23%
+        margin-bottom: 30px
+        background-color: #fff
+        border-radius: 10px
+        overflow: hidden
+        text-decoration: none
+        &:not(:last-child)
+        margin-right: 2%
+        &-thumbnail
+            height: 180px
+            width: 100%
+            object-fit: cover
+        &-content
+            padding: 15px 25px 25px 25px
+        &-title
+            font-family: 'Roboto Slab'
+            font-weight: bold
+            font-size: 16px
+            line-height: 25px
+            margin-top: 0
+            margin-bottom: 5px
+            color: #262D33
+        &-excerpt
+            font-size: 14px
+            line-height: 20px
+            color: #4b5157
+            margin-bottom: 14px
+        .author
+            display: flex
+            align-items: center
+            &-avatar
+                width: 45px
+                height: 45px
+                object-fit: cover
+                border-radius: 50%
+            &-info
+                display: flex
+                flex-wrap: wrap
+                margin-left: 10px
+                font-size: 12px
+                line-height: 15px
+                color: #939699
+            &-name
+                font-size: 14px
+                line-height: 20px
+                width: 100%
+                color: #4B5157
+            .comments, .likes
+                display: flex
+                align-items: center
+                margin-left: 10px
+            .comments-icon
+                width: 13.5px
+                height: 13.5px
+                fill: #BCBFC2
+            .likes-icon
+                width: 12.75px
+                height: 11.7px
+                fill: #BCBFC2
+            .comments-counter, .likes-counter
+                color: #939699
+                margin-left: 5px
+@media screen and ( max-width: 1300px )
+    .post
+        &-card
+            width: 31%
+@media screen and ( max-width: 1000px )
+    .post
+        &-card
+            width: 48%
+@media screen and ( max-width: 700px )
+    .post
+        &-card
+            width: 100%
+            margin-right: 0
+    
