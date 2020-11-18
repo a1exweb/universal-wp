@@ -19,16 +19,17 @@
                             ?>
                         </div>
                         <div class="content">
-                            <?php 
+                        <?php 
                                 foreach (get_the_category() as $key => $category) {
                                     printf(
-                                        '<div class="header-post"><span class="category-name %s">%s</span></div>',
-                                        esc_html($category -> slug),
-                                        esc_html($category -> name)
+                                        '<div class="header-post"><a rel="category tag" href="%s" class="category-link %s">%s</a></div>',
+                                    esc_url(get_category_link($category)),
+                                    esc_html($category -> slug),
+                                    esc_html($category -> name)
                                     );
                                 }
                             ?>
-                            <a href="<?php the_permalink(); ?>">
+                            <a class="title-link" href="<?php the_permalink(); ?>">
                                 <h2 class="title">
                                     <?php trim_title(100); ?>
                                 </h2>

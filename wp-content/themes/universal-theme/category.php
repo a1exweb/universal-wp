@@ -3,7 +3,7 @@
     <h1 class="category-title"><?php single_cat_title(); ?></h1>
         <div class="post-list">
         <?php while ( have_posts() ){ the_post(); ?>
-            <a href="<?php get_the_permalink(); ?>" class="post-card">
+            <a href="<?php the_permalink(); ?>" class="post-card">
                     <img src="<?php if (has_post_thumbnail( )) { 
                         echo get_the_post_thumbnail_url(null, 'thumb' ); 
                     } else {
