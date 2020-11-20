@@ -749,6 +749,37 @@ function plural_form($number, $after) {
 	echo $number.' '.$after[ ($number%100>4 && $number%100<20)? 2: $cases[min($number%10, 5)] ];
 }
 
+add_action( 'wp_enqueue_scripts', 'adminAjax_data', 99 );
+function adminAjax_data(){
+
+	wp_localize_script( 'jquery', 'adminAjax', 
+		array(
+			'url' => admin_url('admin-ajax.php')
+		)
+	);  
+
+}
+
+add_action('wp_ajax_contacts_form', 'ajax_form');
+add_action('wp_ajax_nopriv_contacts_form', 'ajax_form');
+function ajax_form() {
+	$contact_name = $_POST['contact_name'];
+	$contact_email = $_POST['contact_email'];
+	$contact_question = $_POST['contact_question'];
+	$message = 'Пользователь' .$contact_name . ' Задал вопрос: ' .$contact_question . ' Его email: ' . $contact_email;
+	$headers = 'From: Александр Ярославцев <web.dev.a1exweb@gmail.com>' . "\r\n";
+
+	$send_message = wp_mail('web.dev.a1exweb@gmail.com', 'Пришёл вопрос от пользователя', $message, $headers);
+	if($send_message) {
+		echo 'Okay';
+	} else {
+		echo 'Error';
+	}
+
+	// выход нужен для того, чтобы в ответе не было ничего лишнего, только то что возвращает функция
+	wp_die();
+}
+
 // remove versions
 function rem_wp_ver_css_js( $src ) {
     if ( strpos( $src, 'ver=' ) )
