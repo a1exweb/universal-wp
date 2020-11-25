@@ -1890,10 +1890,10 @@ body {
   .footer-info li:not(:last-child) {
     margin-bottom: 20px; } }
 
-.single-post .post-header {
+.single .post-header, .lesson .post-header {
   padding: 60px 0 72px;
   color: #ffffff; }
-  .single-post .post-header-nav {
+  .single .post-header-nav, .lesson .post-header-nav {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1906,11 +1906,11 @@ body {
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between; }
-    .single-post .post-header-nav .icon {
+    .single .post-header-nav .icon, .lesson .post-header-nav .icon {
       fill: #fff; }
-    .single-post .post-header-nav .category-link:not(:first-child) {
+    .single .post-header-nav .category-link:not(:first-child), .lesson .post-header-nav .category-link:not(:first-child) {
       margin-left: 8px; }
-  .single-post .post-header .home-link {
+  .single .post-header .home-link, .lesson .post-header .home-link {
     text-decoration: none;
     color: #ffffff;
     font-size: 14px;
@@ -1918,23 +1918,23 @@ body {
     font-weight: 900;
     margin-left: auto;
     margin-right: 30px; }
-  .single-post .post-header .home-icon {
+  .single .post-header .home-icon, .lesson .post-header .home-icon {
     margin-right: 6px;
     width: 18px;
     height: 17px; }
-  .single-post .post-header .prev-icon, .single-post .post-header .next-icon {
+  .single .post-header .prev-icon, .single .post-header .next-icon, .lesson .post-header .prev-icon, .lesson .post-header .next-icon {
     width: 15px;
     height: 7px; }
-  .single-post .post-header .prev-icon {
+  .single .post-header .prev-icon, .lesson .post-header .prev-icon {
     margin-right: 8px;
     -webkit-transform: rotate(-180deg);
     -ms-transform: rotate(-180deg);
     transform: rotate(-180deg); }
-  .single-post .post-header .next-icon {
+  .single .post-header .next-icon, .lesson .post-header .next-icon {
     margin-left: 8px; }
-  .single-post .post-header .nav-links {
+  .single .post-header .nav-links, .lesson .post-header .nav-links {
     min-width: 160px; }
-    .single-post .post-header .nav-links a {
+    .single .post-header .nav-links a, .lesson .post-header .nav-links a {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -1947,10 +1947,10 @@ body {
       line-height: 20px;
       color: #ffffff;
       text-decoration: none; }
-  .single-post .post-header .navigation {
+  .single .post-header .navigation, .lesson .post-header .navigation {
     margin: 0; }
 
-.single-post .post-title {
+.single .post-title, .lesson .post-title {
   font-family: 'Roboto Slab', sans-serif;
   font-size: 55px;
   line-height: 70px;
@@ -1959,19 +1959,19 @@ body {
   margin-top: 52px;
   margin-bottom: 10px; }
 
-.single-post .post .excerpt {
+.single .post .excerpt, .lesson .post .excerpt {
   font-size: 18px;
   line-height: 30px;
   margin-bottom: 43px;
   max-width: 630px;
   opacity: 0.8; }
 
-.single-post .header-post {
+.single .header-post, .lesson .header-post {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex; }
-  .single-post .header-post .bookmark-icon {
+  .single .header-post .bookmark-icon, .lesson .header-post .bookmark-icon {
     margin-left: auto;
     margin-top: 70px;
     width: 21px;
@@ -1979,7 +1979,7 @@ body {
     fill: rgba(255, 255, 255, 0.4);
     cursor: pointer; }
 
-.single-post .down-info {
+.single .down-info, .lesson .down-info {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1987,17 +1987,17 @@ body {
   color: rgba(255, 255, 255, 0.85);
   font-size: 12px;
   line-height: 15px; }
-  .single-post .down-info .icon {
+  .single .down-info .icon, .lesson .down-info .icon {
     fill: rgba(255, 255, 255, 0.4);
     height: 13.5px;
     margin-right: 5px; }
-  .single-post .down-info .time-icon {
+  .single .down-info .time-icon, .lesson .down-info .time-icon {
     width: 13.5px; }
-  .single-post .down-info .likes-icon {
+  .single .down-info .likes-icon, .lesson .down-info .likes-icon {
     width: 11.7px; }
-  .single-post .down-info .comments-icon {
+  .single .down-info .comments-icon, .lesson .down-info .comments-icon {
     width: 13.5px; }
-  .single-post .down-info .date, .single-post .down-info .likes, .single-post .down-info .comments {
+  .single .down-info .date, .single .down-info .likes, .single .down-info .comments, .lesson .down-info .date, .lesson .down-info .likes, .lesson .down-info .comments {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2006,7 +2006,7 @@ body {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center; }
-  .single-post .down-info .likes, .single-post .down-info .comments {
+  .single .down-info .likes, .single .down-info .comments, .lesson .down-info .likes, .lesson .down-info .comments {
     margin-left: 20px; }
 
 .post-header {
@@ -2706,3 +2706,13 @@ body {
   max-width: 137px;
   -moz-text-align-last: left;
   text-align-last: left; }
+
+.lesson-header {
+  padding: 80px 0; }
+
+.lesson .post-title {
+  font-family: 'Lato';
+  margin-bottom: 20px; }
+
+.lesson .post-header {
+  height: unset; }
