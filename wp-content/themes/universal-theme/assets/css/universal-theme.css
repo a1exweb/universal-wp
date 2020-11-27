@@ -2520,9 +2520,9 @@ body {
         .search .articles-news .pagination .next .icon {
           margin-left: 8px; }
 
-.category {
+.category, .archive {
   background: #EDEFF0; }
-  .category-title {
+  .category-title, .archive-title {
     font-family: 'Roboto Slab', sans-serif;
     font-weight: bold;
     font-size: 40px;
