@@ -876,6 +876,48 @@ function ajax_form() {
 	wp_die();
 }
 
+function the_breadcrumb() {
+	$separator = '<svg class="separator">
+	<use xlink:href="'. get_template_directory_uri(). '/assets/images/sprite.svg#separator"></use>
+</svg>';
+    echo '<div id="breadcrumb"><ul><li><a href="/">Главная</a></li>';
+
+    if ( is_category() || is_single() ) {
+        $cats = get_the_category();
+		$cat = $cats[0];
+		$category = get_the_category();
+		$link_category = $category[0]->taxonomy;
+		echo '<li>'.$separator.'</li><li><a href="'. get_home_url() . '/'. $link_category . '">Категории</a></li><li>'.$separator.'</li>';
+        echo '<li><a href="'.get_category_link($cat->term_id).'">'.$cat->name.'</a></li>';
+    }
+
+    if(is_single()){
+        echo '<li>';
+        the_title();
+        echo '</li>';
+    }
+
+    if(is_page()){
+        echo '<li>';
+        the_title();
+        echo '</li>';
+	}
+	
+	if (is_tax() ) {
+		$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
+		$category = $term->taxonomy;	
+		echo '<li>'.$separator.'</li><li><a href="'. get_home_url() . '/'. $category . '">Категории</a></li><li>'.$separator.'</li>';
+		echo '<li><a href="'. get_home_url() . '/' . $category . '/';
+		single_term_title();
+		echo '">';
+		single_term_title();
+		echo '</a></li>';
+	}
+	echo '</ul><div class="clear"></div></div>';
+}
+
+
+
 // remove versions
 function rem_wp_ver_css_js( $src ) {
     if ( strpos( $src, 'ver=' ) )

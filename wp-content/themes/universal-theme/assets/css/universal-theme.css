@@ -367,6 +367,28 @@ input.input {
   -webkit-border-radius: 5px;
   border-radius: 5px; }
 
+#breadcrumb {
+  margin-top: 50px; }
+  #breadcrumb ul {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0; }
+    #breadcrumb ul a {
+      text-decoration: none;
+      color: #262d33;
+      font-weight: 900;
+      font-size: 14px;
+      line-height: 20px; }
+  #breadcrumb .separator {
+    fill: #BCBFC2;
+    width: 5px;
+    height: 9px;
+    margin: 0 12px; }
+
 .home {
   background-color: #E5E5E5; }
 
