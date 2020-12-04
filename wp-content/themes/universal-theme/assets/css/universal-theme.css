@@ -1260,6 +1260,8 @@ body {
       text-decoration: none;
       color: #262D33;
       padding: 25px 0; }
+      .articles-news .articles-wrapper .article .content {
+        width: 100%; }
       .articles-news .articles-wrapper .article .title-link {
         color: #263d33;
         text-decoration: none; }
@@ -1293,7 +1295,8 @@ body {
         text-transform: uppercase;
         font-weight: 900;
         font-size: 12px;
-        line-height: 15px; }
+        line-height: 15px;
+        padding: 0; }
       .articles-news .articles-wrapper .article .content .title {
         font-family: 'Roboto Slab', sans-serif;
         margin-top: 15px;

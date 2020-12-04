@@ -28,7 +28,20 @@
                         <img src="<?php echo get_avatar_url( $author_id ); ?>" alt="" class="avatar">
                         <div class="author-bio">
                             <span class="author-name"><?php the_author( ); ?></span>
-                            <span class="author-rank">Должность</span>
+                            <span class="author-rank"><?php 
+                                // получаем список всех ролей
+                                $roles = wp_roles()->roles;
+                                // узнаем текущую роль пользователя
+                                $current_role = get_the_author_meta( 'roles', $author_id )[0];
+                                // перебираем все роли
+                                foreach ($roles as $role => $value) {
+                                    // если наша текущая роль совпадает с ролью из списка
+                                    if($role == $current_role) {
+                                        // выводим роль
+                                        echo $value['name'];
+                                    }
+                                }
+                            ?></span>
                         </div>
                     </a>
 
@@ -455,7 +468,20 @@ wp_reset_postdata(); // Сбрасываем $post
                                 <img src="<?php echo get_avatar_url( $author_id ); ?>" alt="" class="author-avatar">
                                 <div class="author-bio">
                                     <span class="author-name"><?php the_author( ); ?></span>
-                                    <span class="author-rank">Должность</span>
+                                    <span class="author-rank"><?php 
+                                // получаем список всех ролей
+                                $roles = wp_roles()->roles;
+                                // узнаем текущую роль пользователя
+                                $current_role = get_the_author_meta( 'roles', $author_id )[0];
+                                // перебираем все роли
+                                foreach ($roles as $role => $value) {
+                                    // если наша текущая роль совпадает с ролью из списка
+                                    if($role == $current_role) {
+                                        // выводим роль
+                                        echo $value['name'];
+                                    }
+                                }
+                            ?></span>
                                 </div>
                             </a>
                             <h3 class="photo-report-title"><?php trim_title(60); ?></h3>

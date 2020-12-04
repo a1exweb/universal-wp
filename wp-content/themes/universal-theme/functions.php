@@ -2,6 +2,28 @@
 // Add advanced features
 if ( ! function_exists( 'universal_theme_setup' ) ) :
     function universal_theme_setup() {
+
+			// Удаляем роль при деактивации нашей темы
+			add_action( 'switch_theme', 'deactivate_universal_theme' );
+			function deactivate_universal_theme() {
+				remove_role( 'developer' );
+				remove_role( 'designer' );
+				remove_role( 'photographer' );
+				remove_role( 'freelancer' );
+			}
+	
+			// Добавляем роль при активации нашей темы
+			add_action( 'after_switch_theme', 'activate_universal_theme' );
+			function activate_universal_theme() {
+				// Получим объект данных роли "Автор"
+				$author = get_role( 'author' );
+				add_role( 'developer', 'Разработчик', $author->capabilities );
+				add_role( 'designer', 'Дизайнер', $author->capabilities );
+				add_role( 'photographer', 'Фотограф', $author->capabilities );
+				add_role( 'freelancer', 'Фрилансер', $author->capabilities );
+			}
+
+
 		// Add files translate
 		load_theme_textdomain( 'universal', get_template_directory() . '/languages' );
         // Add tag title
@@ -259,7 +281,7 @@ class Downloader_Widget extends WP_Widget {
 		// __construct( $id_base, $name, $widget_options = array(), $control_options = array() )
 		parent::__construct(
 			'downloader_widget', // ID виджета, если не указать (оставить ''), то ID будет равен названию класса в нижнем регистре: downloader_widget
-			__('Useful files'),
+			__('Useful files', 'universal'),
 			array( 'description' => __('Files for download', 'universal'), 'classname' => 'widget-downloader', )
 		);
 
@@ -304,7 +326,7 @@ class Downloader_Widget extends WP_Widget {
 	 * @param array $instance сохраненные данные из настроек
 	 */
 	function form( $instance ) {
-		$title = @ $instance['title'] ?: __('Useful files');
+		$title = @ $instance['title'] ?: __('Useful files', 'universal');
         $description = @ $instance['description'] ?: __('Description');
         $link = @ $instance['link'] ?: 'http://disk.yandex.ru';
 		?>
@@ -607,7 +629,7 @@ class Recent_Widget extends WP_Widget {
 							<span class="recent-post-time">
 							<?php
 								$time_diff = human_time_diff( get_post_time('U'), current_time('timestamp') );
-								echo "$time_diff __('Back', 'universal').";
+								echo "$time_diff назад.";
 							?>
 							</span>
 						</div>
